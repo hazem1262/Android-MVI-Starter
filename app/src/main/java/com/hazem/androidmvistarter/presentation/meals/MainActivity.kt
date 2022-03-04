@@ -14,6 +14,7 @@ class MainActivity : ComponentActivity() {
     private val viewModel:MainActivityViewModel  by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.getMeals()
         setContent {
             Log.d("viewModel","viewModel inside main activity: ${viewModel.hashCode()}")
             val state = viewModel.uiState.collectAsState().value
