@@ -3,6 +3,7 @@ package com.hazem.androidmvistarter.presentation.meals
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -17,16 +18,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberImagePainter
 import com.hazem.androidmvistarter.ui.theme.AndroidMVIStarterTheme
 import com.hazem.androidmvistarter.utils.network.NetworkUtils.BASE_URL
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    private val viewModel:MainActivityViewModel  by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val viewModel:MainActivityViewModel  = viewModel()
             val state = viewModel.uiState.collectAsState().value
             AndroidMVIStarterTheme {
                 // A surface container using the 'background' color from the theme
