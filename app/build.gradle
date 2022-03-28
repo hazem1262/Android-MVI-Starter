@@ -3,6 +3,9 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+//    id 'com.android.library'
+    id 'androidx.benchmark'
+//    id 'org.jetbrains.kotlin.plugin.serialization'
 }
 
 android {
@@ -14,8 +17,7 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.benchmark.junit4.AndroidBenchmarkRunner"
         vectorDrawables {
             useSupportLibrary true
         }
@@ -77,4 +79,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    // benchmark
+    androidTestImplementation("androidx.benchmark:benchmark-junit4:1.0.0")
 }
