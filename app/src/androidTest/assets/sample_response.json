@@ -1,0 +1,50 @@
+[
+  {
+    "date": "2022-03-12",
+    "dptMin": 20,
+    "dptMax": 20,
+    "pointsUsed": 20,
+    "inHealthyEatingZone": true,
+    "dayText": "monday"
+  },
+  {
+    "date": "2022-03-12",
+    "dptMin": 20,
+    "dptMax": 20,
+    "pointsUsed": 20,
+    "inHealthyEatingZone": true,
+    "dayText": "monday"
+  },
+  {
+    "date": "2022-03-12",
+    "dptMin": 20,
+    "dptMax": 20,
+    "pointsUsed": 20,
+    "inHealthyEatingZone": true,
+    "dayText": "monday"
+  },
+  {
+    "date": "2022-03-12",
+    "dptMin": 20,
+    "dptMax": 20,
+    "pointsUsed": 20,
+    "inHealthyEatingZone": true,
+    "dayText": "monday"
+  },
+  {
+    "date": "2022-03-12",
+    "dptMin": 20,
+    "dptMax": 20,
+    "pointsUsed": 20,
+    "inHealthyEatingZone": true,
+    "dayText": "monday"
+  },
+  {
+    "date": "2022-03-12",
+    "dptMin": 20,
+    "dptMax": 20,
+    "pointsUsed": 20,
+    "inHealthyEatingZone": true,
+    "dayText": "monday"
+  }
+]

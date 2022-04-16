@@ -5,9 +5,10 @@ plugins {
     id 'dagger.hilt.android.plugin'
 //    id 'com.android.library'
     id 'androidx.benchmark'
+
 //    id 'org.jetbrains.kotlin.plugin.serialization'
 }
-
+apply plugin: "kotlinx-serialization"
 android {
     compileSdk 31
 
@@ -79,6 +80,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    // kotlin serialization
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.2"
 
     // benchmark
     androidTestImplementation("androidx.benchmark:benchmark-junit4:1.0.0")
