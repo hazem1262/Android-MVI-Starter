@@ -1,4 +1,4 @@
-package com.hazem.androidmvistarter.presentation.meals.views
+package com.hazem.androidmvistarter.presentation.meals.list.views
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row

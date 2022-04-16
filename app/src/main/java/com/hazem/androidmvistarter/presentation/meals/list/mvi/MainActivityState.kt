@@ -1,4 +1,4 @@
-package com.hazem.androidmvistarter.presentation.meals.mvi
+package com.hazem.androidmvistarter.presentation.meals.list.mvi
 
 import com.hazem.androidmvistarter.data.remote.meals.Meal
 
