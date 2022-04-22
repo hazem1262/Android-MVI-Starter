@@ -1,13 +1,16 @@
 package com.hazem.androidmvistarter.data.remote.meals
 
+import android.os.Parcelable
 import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
+@Parcelize
 data class Meal(
     val filter: String?,
     val image: String?,
     val title: String?
-){
+) : Parcelable {
     // beautify the returned tags from the api
     fun getFormattedTags():String{
         var tags = arrayListOf<String>()

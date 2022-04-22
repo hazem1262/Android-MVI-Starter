@@ -10,7 +10,7 @@ import com.hazem.androidmvistarter.presentation.meals.list.MealListViewModel
 import com.hazem.androidmvistarter.ui.theme.AndroidMVIStarterTheme
 
 @Composable
-fun MealsScreen(meals:List<Meal>) {
+fun MealsListScreen(meals:List<Meal>) {
     // shared view model between all composable functions in the same activity
     val viewModel: MealListViewModel = viewModel()
     Log.d("viewModel","viewModel inside meals screen: ${viewModel.hashCode()}")
@@ -18,7 +18,7 @@ fun MealsScreen(meals:List<Meal>) {
         LazyColumn {
             items(
                 meals
-            ){ meal -> MealItem(meal = meal) }
+            ){ meal -> MealListItem(meal = meal) }
         }
     }
 }

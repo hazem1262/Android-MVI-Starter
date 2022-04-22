@@ -20,18 +20,19 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.hazem.androidmvistarter.data.remote.meals.Meal
 import com.hazem.androidmvistarter.presentation.details.MealDetailsActivity
-import com.hazem.androidmvistarter.utils.extensions.getActivity
 import com.hazem.androidmvistarter.utils.network.NetworkUtils
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun MealItem(meal: Meal, context:Context = LocalContext.current) {
+fun MealListItem(meal: Meal, context:Context = LocalContext.current) {
     Card(
         elevation = 2.dp,
         modifier = Modifier.fillMaxWidth().padding(8.dp),
         shape = RoundedCornerShape(size = 16.dp),
         onClick = {
-            context.startActivity(Intent(context, MealDetailsActivity::class.java))
+            val intent = Intent(context, MealDetailsActivity::class.java)
+            intent.putExtra(MealDetailsActivity.MEAL_EXTRA_KEY, meal)
+            context.startActivity(intent)
         }
     ) {
         Row (verticalAlignment = Alignment.CenterVertically){

@@ -6,7 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.collectAsState
-import com.hazem.androidmvistarter.presentation.meals.list.views.MealsScreen
+import com.hazem.androidmvistarter.presentation.meals.list.views.MealsListScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,7 +18,7 @@ class MealListActivity : ComponentActivity() {
         setContent {
             Log.d("viewModel","viewModel inside main activity: ${viewModel.hashCode()}")
             val state = viewModel.uiState.collectAsState().value
-            MealsScreen(state.meals)
+            MealsListScreen(state.meals)
         }
     }
 }
