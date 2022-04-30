@@ -1,6 +1,7 @@
 package com.hazem.androidmvistarter.presentation.meals.details.fullScreenImage
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,8 +21,8 @@ fun FullImageScreen(meal: Meal?) {
         contentDescription = null,
         modifier = Modifier
             .fillMaxWidth()
-            .height(200.dp)
+            .fillMaxHeight()
             .clip(RoundedCornerShape(10)),
-        contentScale = ContentScale.FillWidth
+        contentScale = ContentScale.FillBounds
     )
 }

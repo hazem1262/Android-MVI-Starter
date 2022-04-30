@@ -44,7 +44,12 @@ class MealDetailsActivity : ComponentActivity() {
             modifier = modifier
         ) {
             composable(DetailsScreen.MealDetails.name){
-                MealDetailsScreen(meal = meal)
+                MealDetailsScreen(
+                    meal = meal,
+                    onClickSeeAllBills = {
+                        navController.navigate(DetailsScreen.FullImage.name)
+                    }
+                )
             }
 
             composable(DetailsScreen.FullImage.name){

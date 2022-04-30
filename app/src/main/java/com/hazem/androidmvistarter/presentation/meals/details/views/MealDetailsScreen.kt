@@ -1,6 +1,7 @@
 package com.hazem.androidmvistarter.presentation.meals.details.views
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -16,7 +17,10 @@ import com.hazem.androidmvistarter.data.remote.meals.Meal
 import com.hazem.androidmvistarter.utils.network.NetworkUtils
 
 @Composable
-fun MealDetailsScreen(meal:Meal?) {
+fun MealDetailsScreen(
+    meal:Meal?,
+    onClickSeeAllBills: () -> Unit = {},
+) {
     Column(modifier = Modifier) {
         Text(text = meal?.title ?: "No Meal")
         Image(
@@ -25,7 +29,10 @@ fun MealDetailsScreen(meal:Meal?) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
-                .clip(RoundedCornerShape(10)),
+                .clip(RoundedCornerShape(10))
+                .clickable {
+                           onClickSeeAllBills()
+                },
             contentScale = ContentScale.FillWidth
         )
     }
