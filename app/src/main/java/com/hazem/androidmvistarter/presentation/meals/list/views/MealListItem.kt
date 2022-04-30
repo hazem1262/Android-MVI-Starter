@@ -19,7 +19,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.hazem.androidmvistarter.data.remote.meals.Meal
-import com.hazem.androidmvistarter.presentation.details.MealDetailsActivity
+import com.hazem.androidmvistarter.presentation.meals.details.MealDetailsActivity
 import com.hazem.androidmvistarter.utils.network.NetworkUtils
 
 @OptIn(ExperimentalMaterialApi::class)

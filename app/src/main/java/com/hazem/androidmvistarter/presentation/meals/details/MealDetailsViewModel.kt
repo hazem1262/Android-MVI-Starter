@@ -1,4 +1,4 @@
-package com.hazem.androidmvistarter.presentation.details
+package com.hazem.androidmvistarter.presentation.meals.details
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidMVIStarter">
         <activity
-            android:name=".presentation.details.MealDetailsActivity"
+            android:name="com.hazem.androidmvistarter.presentation.meals.details.MealDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.meals.list.MealListActivity"
