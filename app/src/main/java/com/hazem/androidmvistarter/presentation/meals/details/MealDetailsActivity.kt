@@ -3,19 +3,17 @@ package com.hazem.androidmvistarter.presentation.meals.details
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Text
+import androidx.compose.material.Scaffold
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.hazem.androidmvistarter.data.remote.meals.Meal
-import com.hazem.androidmvistarter.utils.network.NetworkUtils
+import com.hazem.androidmvistarter.presentation.meals.details.fullScreenImage.FullImageScreen
+import com.hazem.androidmvistarter.presentation.meals.details.views.MealDetailsScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,19 +22,35 @@ class MealDetailsActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         val meal: Meal? = intent.extras?.getParcelable(MEAL_EXTRA_KEY)
         setContent {
-            Column(modifier = Modifier) {
-                Text(text = meal?.title ?: "")
-                Image(
-                    painter = rememberImagePainter("${NetworkUtils.BASE_URL}${meal?.image}"),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(200.dp)
-                        .clip(RoundedCornerShape(10)),
-                    contentScale = ContentScale.FillWidth
-
-                )
+            val navController = rememberNavController()
+            Scaffold {
+                innerPadding -> MealDetailsNavHost(
+                navController = navController,
+                modifier = Modifier.padding(innerPadding),
+                meal = meal
+            )
             }
+        }
+    }
+    @Composable
+    private fun MealDetailsNavHost(
+        navController: NavHostController,
+        modifier: Modifier = Modifier,
+        meal: Meal?
+    ) {
+        NavHost(
+            navController = navController,
+            startDestination = DetailsScreen.MealDetails.name,
+            modifier = modifier
+        ) {
+            composable(DetailsScreen.MealDetails.name){
+                MealDetailsScreen(meal = meal)
+            }
+
+            composable(DetailsScreen.FullImage.name){
+                FullImageScreen(meal = meal)
+            }
+
         }
     }
 
