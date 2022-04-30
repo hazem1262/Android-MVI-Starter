@@ -21,8 +21,7 @@ fun FullImageScreen(meal: Meal?) {
         contentDescription = null,
         modifier = Modifier
             .fillMaxWidth()
-            .fillMaxHeight()
-            .clip(RoundedCornerShape(10)),
+            .fillMaxHeight(),
         contentScale = ContentScale.FillBounds
     )
 }

@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Scaffold
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -23,12 +25,24 @@ class MealDetailsActivity : ComponentActivity() {
         val meal: Meal? = intent.extras?.getParcelable(MEAL_EXTRA_KEY)
         setContent {
             val navController = rememberNavController()
-            Scaffold {
+            Scaffold(
+               topBar = {
+                   TopAppBar(
+                   ) {
+                       IconButton(onClick = {
+                           onBackPressed()
+                       }) {
+                           Icon(Icons.Filled.ArrowBack, "backIcon")
+                       }
+                       Text(text = meal?.title?:"No Meal")
+                   }
+               }
+            ) {
                 innerPadding -> MealDetailsNavHost(
                 navController = navController,
                 modifier = Modifier.padding(innerPadding),
                 meal = meal
-            )
+                )
             }
         }
     }
